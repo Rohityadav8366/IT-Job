@@ -1,5 +1,11 @@
 package com.SpringBoot.ITJOBS.job;
 
-public class JobService {
+import java.util.List;
 
+public interface JobService {
+
+    List<Job> findAll();
+    void createJob(Job job);
+
+    Job getJobById(Long id);
 }
