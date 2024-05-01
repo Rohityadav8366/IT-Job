@@ -1,13 +1,21 @@
 package com.SpringBoot.ITJOBS.job;
 
-public class Job {
+import jakarta.persistence.*;
 
+@Entity
+//@Table(name="job_table")
+public class Job {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String title;
     private String description;
     private String experience ;
     private String salary;
     private String location;
+
+    public Job() {
+    }
 
     public Job(long id, String title, String description, String experience, String salary, String location) {
         this.id = id;
