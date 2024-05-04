@@ -31,13 +31,14 @@ public class JobServiceImp implements JobService {
     @Override
     public Job getJobById(Long id) {
        return jobRepository.findById(id).orElse(null);
-
     }
 
     @Override
     public boolean deletejobById(Long id) {
-        try {jobRepository.deleteById(id);
-        return true;}
+        try {
+            jobRepository.deleteById(id);
+        return true;
+        }
     catch(Exception e){
        return false;
     }
@@ -54,7 +55,6 @@ public class JobServiceImp implements JobService {
                 job.setExperience(updatedJob.getExperience());
                 job.setSalary(updatedJob.getSalary());
                 job.setLocation(updatedJob.getLocation());
-                jobRepository.save(job);
                 return true;
             }
         return false;

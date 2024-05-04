@@ -10,14 +10,14 @@ public class Job {
     private long id;
     private String title;
     private String description;
-    private String experience ;
+    private int experience ;
     private String salary;
     private String location;
 
     public Job() {
     }
 
-    public Job(long id, String title, String description, String experience, String salary, String location) {
+    public Job(long id, String title, String description, int experience, String salary, String location) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -50,11 +50,11 @@ public class Job {
         this.description = description;
     }
 
-    public String getExperience() {
+    public int getExperience() {
         return experience;
     }
 
-    public void setExperience(String experience) {
+    public void setExperience(int experience) {
         this.experience = experience;
     }
 
