@@ -55,6 +55,7 @@ public class JobServiceImp implements JobService {
                 job.setExperience(updatedJob.getExperience());
                 job.setSalary(updatedJob.getSalary());
                 job.setLocation(updatedJob.getLocation());
+                jobRepository.save(job);
                 return true;
             }
         return false;

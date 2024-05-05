@@ -3,25 +3,25 @@ package com.SpringBoot.ITJOBS.job;
 import jakarta.persistence.*;
 
 @Entity
-//@Table(name="job_table")
+@Table(name="job_table")
 public class Job {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String title;
     private String description;
-    private int experience ;
+    private String experience ;
     private String salary;
     private String location;
 
     public Job() {
     }
 
-    public Job(long id, String title, String description, int experience, String salary, String location) {
+    public Job(long id, String title, String description, String salary, String location) {
         this.id = id;
         this.title = title;
         this.description = description;
-        this.experience = experience;
+        this.experience = " ";
         this.salary = salary;
         this.location = location;
     }
@@ -50,11 +50,11 @@ public class Job {
         this.description = description;
     }
 
-    public int getExperience() {
+    public String getExperience() {
         return experience;
     }
 
-    public void setExperience(int experience) {
+    public void setExperience(String experience) {
         this.experience = experience;
     }
 

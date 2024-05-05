@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 //@RequestMapping("/job")
 public class JobController {
-    private final JobService jobService;
+    private JobService jobService;
 
     public JobController(JobService jobService) {
         this.jobService = jobService;
