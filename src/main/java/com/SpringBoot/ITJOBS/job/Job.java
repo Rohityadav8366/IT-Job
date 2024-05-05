@@ -1,5 +1,6 @@
 package com.SpringBoot.ITJOBS.job;
 
+import com.SpringBoot.ITJOBS.company.Company;
 import jakarta.persistence.*;
 
 @Entity
@@ -13,6 +14,8 @@ public class Job {
     private String experience ;
     private String salary;
     private String location;
+    @ManyToOne
+    private Company company;
 
     public Job() {
     }
@@ -24,6 +27,14 @@ public class Job {
         this.experience = " ";
         this.salary = salary;
         this.location = location;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 
     public long getId() {
