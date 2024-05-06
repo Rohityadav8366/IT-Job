@@ -1,5 +1,6 @@
 package com.SpringBoot.ITJOBS.job;
 
+import com.SpringBoot.ITJOBS.company.Company;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +26,7 @@ public class JobController {
     public ResponseEntity<String> createJob(@RequestBody Job job)
     {
         jobService.createJob(job);
+        Company c=job.getCompany();
         return new ResponseEntity<>("Job added Successfully",HttpStatus.CREATED);
     }
 
@@ -54,4 +56,5 @@ public class JobController {
             return new ResponseEntity<>("Job updated Sucessfully ",HttpStatus.OK);
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
 }

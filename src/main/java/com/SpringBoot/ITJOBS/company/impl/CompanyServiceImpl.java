@@ -3,7 +3,6 @@ package com.SpringBoot.ITJOBS.company.impl;
 import com.SpringBoot.ITJOBS.company.Company;
 import com.SpringBoot.ITJOBS.company.CompanyRepository;
 import com.SpringBoot.ITJOBS.company.CompanyService;
-import com.SpringBoot.ITJOBS.job.Job;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -44,4 +43,19 @@ public class CompanyServiceImpl implements CompanyService {
         companyRepository.save(company);
     }
 
+    @Override
+    public boolean deleteCompanyById(Long id) {
+        if(companyRepository.existsById(id)){
+            companyRepository.deleteById(id);
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    @Override
+    public Company getCompanyById(Long id) {
+        return companyRepository.findById(id).orElse(null);
+    }
 }

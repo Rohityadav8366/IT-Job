@@ -1,6 +1,7 @@
 package com.SpringBoot.ITJOBS.company;
 
 import com.SpringBoot.ITJOBS.job.Job;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -11,6 +12,7 @@ public class Company {
     private  long id;
     private  String name;
     private  String description;
+    @JsonIgnore
     @OneToMany(mappedBy="company")
     private List<Job> jobs;
     //private List<Review> reviews;
