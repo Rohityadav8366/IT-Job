@@ -15,9 +15,9 @@ public class ReviewController {
         this.reviewService = reviewService;
     }
     @GetMapping("/review")
-    public ResponseEntity<List<Review>> getAllReviews(@PathVariable Long id)
+    public ResponseEntity<List<Review>> getAllReviews(@PathVariable Long companyId)
     {
-        return new ResponseEntity(reviewService.getAllReviews(id), HttpStatus.OK);
+        return new ResponseEntity<>(reviewService.getAllReviews(companyId), HttpStatus.OK);
     }
 
 }
