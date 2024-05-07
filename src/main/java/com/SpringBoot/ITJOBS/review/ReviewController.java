@@ -1,8 +1,8 @@
 package com.SpringBoot.ITJOBS.review;
 
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -14,5 +14,11 @@ public class ReviewController {
     public ReviewController(ReviewService reviewService) {
         this.reviewService = reviewService;
     }
+    @GetMapping("/review")
+    public ResponseEntity<List<Review>> getAllReviews(@PathVariable Long id)
+    {
+        return new ResponseEntity(reviewService.getAllReviews(id), HttpStatus.OK);
+    }
+
 }
 
