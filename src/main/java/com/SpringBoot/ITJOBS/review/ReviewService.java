@@ -8,4 +8,5 @@ public interface ReviewService {
     Review getReview(Long compantId,Long reviewId);
     boolean updateReview (Long companyId,Long reviewId,Review updatedReview);
 
+    boolean deletedReview(Long companyId, Long reviewId);
 }
